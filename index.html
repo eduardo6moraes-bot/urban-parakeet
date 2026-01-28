@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>ASH • Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .phone {
+      width: 360px;
+      height: 640px;
+      background: #000;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,.6);
+      border: 6px solid #222;
+    }
+
+    header {
+      height: 48px;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      line-height: 48px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #222;
+    }
+
+    video {
+      width: 100%;
+      height: calc(100% - 48px);
+      object-fit: cover;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone">
+    <header>ASH • DEMO</header>
+    <video autoplay muted loop playsinline>
+      <source src="demo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</body>
+</html>
