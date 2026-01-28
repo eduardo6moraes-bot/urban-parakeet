@@ -1,53 +1,44 @@
-# urban-parakeet: Urban Parakeet
+# ASH · Product Demo
 
-Urban Parakeet is an experimental platform designed to collect and analyze real-time data from urban environments using advanced AI tools.  
-This project was developed as part of the Gemini 3 Hackathon and aims to bring innovation to data-driven decision-making in smart cities.
+ASH (Architecture of Synthetic Humanity) is a conceptual product demo that explores the integration of artificial intelligence, human interaction, and scalable digital architecture.
 
-## Features
+This repository contains a mobile-style visual demo designed to simulate a future-facing AI-driven application experience.
 
-- **Real-time data collection from urban environments:**  
-  Gathers live data streams from diverse urban sensors and open sources to support dynamic analysis.
+## Purpose
 
-- **Integration with Gemini 3 API for intelligent analysis:**  
-  Leverages advanced Gemini AI to detect patterns, generate insights, and make recommendations tailored to real-world scenarios.
+This project was created as:
+- A visual product demonstration
+- A conceptual interface simulation
+- A foundation for future AI-human interaction frameworks
+- A presentation asset for innovation programs and hackathons
 
-- **Visualization dashboard for insights:**  
-  Presents findings through intuitive dashboards for smarter and more accessible decision-making.
+The demo replaces a traditional app interface with a cinematic video experience, allowing rapid visualization of complex ideas without requiring a fully implemented backend.
 
-*(Expand or adjust features as you implement!)*
+## Demo Experience
 
-## Built With
+- Mobile-style UI simulation
+- Embedded video acting as the core interaction layer
+- Clean, minimal, professional design
+- Optimized for presentation and evaluation
 
-- Gemini 3 API  
-- Google AI Studio  
-- Python  
-- JavaScript  
-- Markdown / LaTeX  
-- OpenAI GPT-4  
-- Devpost  
-- Canva (for diagrams/images)  
-- Discord  
+## Technology Stack
 
-## 🚀 How to Run
+- HTML5
+- CSS3
+- Video-based UI simulation
+- Designed for GitHub Pages deployment
 
-```bash
-git clone https://github.com/eduardo6moraes-bot/urban-parakeet.git
-cd urban-parakeet
-Add further installation steps or usage instructions as your code/app evolves!
+## Status
 
-🏙️ Project Context
-Developed by Eduardo Moraes
+This project is a **conceptual demonstration** and is under active development.
 
-This project is part of the Human Sense Architecture (ASH) initiative:
-AI centered on human value, transparency, and practical impact.
+Future iterations may include:
+- Interactive UI layers
+- Dynamic data visualization
+- Integration with AI services
+- Expanded architectural frameworks
 
-🤝 Contributions
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+---
 
-📄 License
-MIT
-Feel free to use, modify, and share — just give credit.
-
-This project was created for the Gemini 3 Hackathon.
-If you have questions, want to collaborate, or are interested in partnership, open an issue or connect!
-
+ASH is not a finished product.  
+It is a **foundation for exploration, validation, and evolution**.
