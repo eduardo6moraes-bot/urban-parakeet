@@ -4,7 +4,7 @@ ASH is an AI-driven cinematic visual intelligence demo that orchestrates AI-gene
 
 ## Live Demo
 
-[View ASH Demo](https://ash-demo.vercel.app)
+[View ASH Demo](https://eduardo6moraes-bot.github.io/ash-demo/)
 
 ## Concept
 
@@ -34,7 +34,7 @@ Arc: **enter → observe → expand → retreat** (a breathing cycle)
         - | Video Generation | Runway Gen-3 |
         - | Image Generation | Craiyon / Midjourney |
         - | Frontend | HTML, CSS, JavaScript |
-        - | Hosting | Vercel |
+        - | Hosting | GitHub Pages |
         - | Video Assembly | FFmpeg |
        
         - ## Project Structure
@@ -83,3 +83,16 @@ Arc: **enter → observe → expand → retreat** (a breathing cycle)
                   - ## License
                  
                   - MIT
+
+                  ## Pending Assets
+
+                  The following assets are currently placeholders and need to be replaced with final files:
+
+                  - `assets/video/ash-final.mp4` — Final 40s cinematic video (1920x1080, H.264)
+                  - `assets/images/cover.png` — Project cover image (16:9, 1920x1080)
+                  - `assets/images/01-threshold.png` — Clip 01 thumbnail
+                  - `assets/images/02-construct.png` — Clip 02 thumbnail
+                  - `assets/images/03-grid.png` — Clip 03 thumbnail
+                  - `assets/images/04-fade.png` — Clip 04 thumbnail
+                  - `pitch/ash-pitch.mp4` — Pitch video (3-5 min)
+                  - `pitch/ash-deck.pdf` — Slide deck PDF
