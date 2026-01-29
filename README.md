@@ -1,44 +1,85 @@
-# ASH · Product Demo
+# ASH — AI-Driven Cinematic Visual Intelligence
 
-ASH (Architecture of Synthetic Humanity) is a conceptual product demo that explores the integration of artificial intelligence, human interaction, and scalable digital architecture.
+ASH is an AI-driven cinematic visual intelligence demo that orchestrates AI-generated video and imagery into immersive, high-end visual experiences with a futuristic corporate aesthetic.
 
-This repository contains a mobile-style visual demo designed to simulate a future-facing AI-driven application experience.
+## Live Demo
 
-## Purpose
+[View ASH Demo](https://ash-demo.vercel.app)
 
-This project was created as:
-- A visual product demonstration
-- A conceptual interface simulation
-- A foundation for future AI-human interaction frameworks
-- A presentation asset for innovation programs and hackathons
+## Concept
 
-The demo replaces a traditional app interface with a cinematic video experience, allowing rapid visualization of complex ideas without requiring a fully implemented backend.
+Four 10-second cinematic clips form a 40-second visual arc:
 
-## Demo Experience
+| # | Clip | Camera Motion | Narrative |
+|---|------|---------------|-----------|
+| 1 | IGNITION | Dolly forward | Entry — anticipation, precision |
+| 2 | STRUCTURE | Slow orbit | Observation — contemplation |
+| 3 | EXPANSION | Push-in | Scale — quiet power |
+| 4 | SILENCE | Dolly backward | Closure — serenity |
 
-- Mobile-style UI simulation
-- Embedded video acting as the core interaction layer
-- Clean, minimal, professional design
-- Optimized for presentation and evaluation
+Arc: **enter → observe → expand → retreat** (a breathing cycle)
 
-## Technology Stack
+## Visual Identity
 
-- HTML5
-- CSS3
-- Video-based UI simulation
-- Designed for GitHub Pages deployment
+- **Palette:** Deep blacks, metallic grays, cold blue, amber accents
+- - **Surfaces:** Polished floors, dark glass, brushed metal, volumetric light
+  - - **Camera:** Slow, controlled — dolly, orbit, push-in
+    - - **Lighting:** Low-key, backlit, volumetric
+      - - **Constraints:** No people, no text, no logos, no UI
+       
+        - ## Tech Stack
+       
+        - | Component | Tool |
+        - |-----------|------|
+        - | Video Generation | Runway Gen-3 |
+        - | Image Generation | Craiyon / Midjourney |
+        - | Frontend | HTML, CSS, JavaScript |
+        - | Hosting | Vercel |
+        - | Video Assembly | FFmpeg |
+       
+        - ## Project Structure
+       
+        - ```
+          ash-demo/
+          ├── index.html
+          ├── assets/
+          │   ├── video/
+          │   │   └── ash-final.mp4
+          │   ├── clips/
+          │   │   ├── 01-ignition.mp4
+          │   │   ├── 02-structure.mp4
+          │   │   ├── 03-expansion.mp4
+          │   │   └── 04-silence.mp4
+          │   └── images/
+          │       └── cover.png
+          ├── pitch/
+          │   ├── ash-pitch.mp4
+          │   └── ash-deck.pdf
+          └── README.md
+          ```
 
-## Status
+          ## Video Assembly
 
-This project is a **conceptual demonstration** and is under active development.
+          ```bash
+          echo "file 'assets/clips/01-ignition.mp4'" > filelist.txt
+          echo "file 'assets/clips/02-structure.mp4'" >> filelist.txt
+          echo "file 'assets/clips/03-expansion.mp4'" >> filelist.txt
+          echo "file 'assets/clips/04-silence.mp4'" >> filelist.txt
+          ffmpeg -f concat -safe 0 -i filelist.txt -c copy assets/video/ash-final.mp4
+          ```
 
-Future iterations may include:
-- Interactive UI layers
-- Dynamic data visualization
-- Integration with AI services
-- Expanded architectural frameworks
+          ## Use Cases
 
----
-
-ASH is not a finished product.  
-It is a **foundation for exploration, validation, and evolution**.
+          - Corporate brand videos and visual identities
+          - - Immersive event presentations
+            - - Product launch cinematics
+              - - AI-powered creative pipeline demonstrations
+                - - Visual prototyping for agencies and studios
+                 
+                  - ## Hackathon
+                 
+                  - Built for [lablab.ai Hackathon 2026](https://lablab.ai).
+                 
+                  - ## License
+                 
+                  - MIT
