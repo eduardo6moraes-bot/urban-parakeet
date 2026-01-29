@@ -1,0 +1,2 @@
+PLACEHOLDER: Replace with ash-final.mp4 (40s cinematic video, 1920x1080, H.264)
+This file should contain the final assembled video from the four 10-second clips.
