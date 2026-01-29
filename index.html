@@ -1,57 +1,135 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <title>ASH • Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      background: #0b0b0b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-    }
-
-    .phone {
-      width: 360px;
-      height: 640px;
-      background: #000;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 0 40px rgba(0,0,0,.6);
-      border: 6px solid #222;
-    }
-
-    header {
-      height: 48px;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      line-height: 48px;
-      font-size: 13px;
-      letter-spacing: 1px;
-      border-bottom: 1px solid #222;
-    }
-
-    video {
-      width: 100%;
-      height: calc(100% - 48px);
-      object-fit: cover;
-      background: black;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="phone">
-    <header>ASH • DEMO</header>
-    <video autoplay muted loop playsinline>
-      <source src="demo.mp4" type="video/mp4">
-    </video>
-  </div>
-
-</body>
-</html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ASH — AI-Driven Cinematic Visual Intelligence</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          body { background: #000; color: #e0e0e0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+          .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; opacity: 0; animation: fadeIn 2s ease-out forwards; }
+          .hero h1 { font-size: 4rem; font-weight: 300; letter-spacing: 0.5em; color: #fff; margin-bottom: 1rem; }
+          .hero p { font-size: 1.1rem; font-weight: 300; color: #888; max-width: 600px; line-height: 1.6; margin-bottom: 2.5rem; }
+          .cta { display: inline-block; padding: 14px 48px; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.4s ease; cursor: pointer; background: transparent; }
+          .cta:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+          .video-section { display: none; width: 100%; height: 100vh; position: relative; background: #000; }
+          .video-section.active { display: flex; align-items: center; justify-content: center; animation: fadeIn 1.5s ease-out; }
+          .video-section video { width: 100%; height: 100%; object-fit: cover; }
+          .back-btn { position: fixed; top: 2rem; left: 2rem; padding: 10px 24px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); background: transparent; font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; z-index: 100; display: none; }
+          .back-btn:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+          .about { padding: 6rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+          .about h2 { font-size: 1.4rem; font-weight: 300; letter-spacing: 0.3em; color: #fff; margin-bottom: 2rem; text-transform: uppercase; }
+          .about p { font-size: 1rem; font-weight: 300; color: #777; line-height: 1.8; margin-bottom: 1.5rem; }
+          .tech-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 2rem; }
+          .tech-tags span { padding: 8px 20px; border: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+          .sequence { padding: 4rem 2rem 6rem; max-width: 900px; margin: 0 auto; }
+          .sequence h2 { font-size: 1.4rem; font-weight: 300; letter-spacing: 0.3em; color: #fff; text-align: center; margin-bottom: 3rem; text-transform: uppercase; }
+          .clip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+          .clip-card { border: 1px solid rgba(255,255,255,0.06); padding: 2rem 1.5rem; text-align: center; }
+          .clip-card .number { font-size: 2.5rem; font-weight: 200; color: rgba(255,255,255,0.15); margin-bottom: 0.5rem; }
+          .clip-card h3 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.25em; color: #fff; text-transform: uppercase; margin-bottom: 0.75rem; }
+          .clip-card p { font-size: 0.8rem; color: #555; line-height: 1.6; }
+          .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+          .footer p { font-size: 0.75rem; color: #444; letter-spacing: 0.1em; }
+          @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+          body.hide-cursor { cursor: none; }
+          body.hide-cursor .back-btn { cursor: none; }
+        </style>
+  </head>
+  <body>
+      <section class="hero" id="hero">
+            <h1>ASH</h1>
+          <p>AI-driven cinematic visual intelligence. Four moments. One breathing arc. No text, no logos. Pure visual narrative powered by artificial intelligence.</p>
+          <button class="cta" id="launchBtn">Experience ASH</button>button>
+      </section>section>
+    <section class="video-section" id="videoSection">
+        <video id="player" muted loop playsinline>
+              <source src="assets/video/ash-final.mp4" type="video/mp4">
+        </video>video>
+    </section>section>
+    <button class="back-btn" id="backBtn">← Back</button>button>
+    <section class="about" id="about">
+        <h2>About</h2>
+        <p>ASH demonstrates how artificial intelligence can create, orchestrate, and deliver high-end immersive visual experiences — from prompt engineering to final cinematic output.</p>
+        <p>The project is built on a complete AI-powered pipeline: carefully engineered prompts generate four cinematic clips that form a 40-second visual arc — IGNITION, STRUCTURE, EXPANSION, SILENCE — mirroring the rhythm of breathing.</p>
+        <div class="tech-tags">
+              <span>Runway Gen-3</span>
+              <span>Generative AI</span>
+              <span>Prompt Engineering</span>
+              <span>HTML / CSS / JS</span>
+              <span>Vercel</span>
+              <span>FFmpeg</span>
+        </div>div>
+    </section>section>
+    <section class="sequence">
+        <h2>The Sequence</h2>
+        <div class="clip-grid">
+              <div class="clip-card">
+                      <div class="number">01</div>div>
+                      <h3>Ignition</h3>
+                      <p>Entry. A slow advance through darkness toward a slit of volumetric light. Anticipation and precision.</p>
+              </div>div>
+              <div class="clip-card">
+                      <div class="number">02</div>div>
+                      <h3>Structure</h3>
+                      <p>Observation. An orbital reveal of an engineered form — dark glass, brushed steel, amber refractions.</p>
+              </div>div>
+              <div class="clip-card">
+                      <div class="number">03</div>div>
+                      <h3>Expansion</h3>
+                      <p>Scale. A vast grid of light extends to infinity. The contained becomes immense. Quiet power.</p>
+              </div>div>
+              <div class="clip-card">
+                      <div class="number">04</div>div>
+                      <h3>Silence</h3>
+                      <p>Closure. A single point of light fades as the camera retreats. Resolution and stillness.</p>
+              </div>div>
+        </div>div>
+    </section>section>
+    <footer class="footer">
+        <p>ASH — Built with AI. Presented at lablab.ai Hackathon 2026.</p>
+    </footer>footer>
+    <script>
+          const hero = document.getElementById('hero');
+          const videoSection = document.getElementById('videoSection');
+          const player = document.getElementById('player');
+          const launchBtn = document.getElementById('launchBtn');
+          const backBtn = document.getElementById('backBtn');
+          let cursorTimer;
+          launchBtn.addEventListener('click', () => {
+                  hero.style.display = 'none';
+                  document.querySelector('.about').style.display = 'none';
+                  document.querySelector('.sequence').style.display = 'none';
+                  document.querySelector('.footer').style.display = 'none';
+                  videoSection.classList.add('active');
+                  backBtn.style.display = 'block';
+                  player.play();
+                  startCursorHide();
+          });
+          backBtn.addEventListener('click', () => {
+                  player.pause();
+                  videoSection.classList.remove('active');
+                  backBtn.style.display = 'none';
+                  hero.style.display = 'flex';
+                  document.querySelector('.about').style.display = 'block';
+                  document.querySelector('.sequence').style.display = 'block';
+                  document.querySelector('.footer').style.display = 'block';
+                  document.body.classList.remove('hide-cursor');
+                  clearTimeout(cursorTimer);
+          });
+          function startCursorHide() {
+                  cursorTimer = setTimeout(() => { document.body.classList.add('hide-cursor'); }, 2000);
+                  document.addEventListener('mousemove', () => {
+                            document.body.classList.remove('hide-cursor');
+                            clearTimeout(cursorTimer);
+                            cursorTimer = setTimeout(() => { document.body.classList.add('hide-cursor'); }, 2000);
+                  });
+          }
+    </script>
+  </body>
+</html>html>
+    </script></p></p></span></span></p></p></h1>
+  </body>
+    </style></title>
+  </head>
